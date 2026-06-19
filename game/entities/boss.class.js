@@ -26,31 +26,31 @@ export default class Boss extends MovableObject {
 
   SWIM_ANIMATION = {
     frames: 13,
-    path: "../assets/boss/floating/",
+    path: "./assets/boss/floating/",
     loop: true,
   };
 
   INTRO_ANIMATION = {
     frames: 7,
-    path: "../assets/boss/intro/",
+    path: "./assets/boss/intro/",
     loop: false,
   };
 
   ATTACK_ANIMATION = {
     frames: 6,
-    path: "../assets/boss/attack/",
+    path: "./assets/boss/attack/",
     loop: false,
   };
 
   HURT_ANIMATION = {
     frames: 4,
-    path: "../assets/boss/hurt/",
+    path: "./assets/boss/hurt/",
     loop: false,
   };
 
   DEAD_ANIMATION = {
     frames: 9,
-    path: "../assets/boss/dead/",
+    path: "./assets/boss/dead/",
     loop: false,
   };
 
@@ -94,7 +94,7 @@ export default class Boss extends MovableObject {
     this.game.sounds.playBossMusic();
     this.startAttacking();
 
-    this.game.sounds.playSound("../assets/sounds/boss-splash.mp3");
+    this.game.sounds.playSound("./assets/sounds/boss-splash.mp3");
   }
 
   /**freeze character for intro */
@@ -134,7 +134,7 @@ export default class Boss extends MovableObject {
       /**animationm and sound */
       this.playAnimation(this.ATTACK_ANIMATION);
       this.game.sounds.playSound(
-        "../assets/sounds/boss-bite.mp3",
+        "./assets/sounds/boss-bite.mp3",
         false,
         0.3,
         150
@@ -181,7 +181,7 @@ export default class Boss extends MovableObject {
       this.game.ui.updateBossHealthbar();
       this.checkForDeath();
 
-      this.game.sounds.playSound("../assets/sounds/boss-hurt.mp3");
+      this.game.sounds.playSound("./assets/sounds/boss-hurt.mp3");
     }
   }
 
@@ -214,7 +214,7 @@ export default class Boss extends MovableObject {
 
     /**stop animation and stick to last image */
     setTimeout(() => {
-      this.loadImage("../assets/boss/dead/8.png");
+      this.loadImage("./assets/boss/dead/8.png");
     }, 1350);
 
     this.clearTimeouts();
@@ -222,7 +222,7 @@ export default class Boss extends MovableObject {
 
     this.game.sounds.fadeOutAllMusic();
     this.game.sounds.playSound(
-      "../assets/sounds/boss-death.mp3",
+      "./assets/sounds/boss-death.mp3",
       false,
       0.5,
       200

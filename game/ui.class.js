@@ -44,7 +44,7 @@ export default class UI {
         if (!this.game.sounds) {
             /**init sounds on main sceen's play button click */
             this.game.sounds = new Sounds();
-            this.game.sounds.playSound('../assets/sounds/button-click.mp3', false, 0.2);
+            this.game.sounds.playSound('./assets/sounds/button-click.mp3', false, 0.2);
 
             /**show tutorial */
             this.openControls();
@@ -68,7 +68,7 @@ export default class UI {
 
         /**play button click sound */
         if (this.questShown) {
-            this.game.sounds.playSound('../assets/sounds/button-click.mp3', false, 0.2);
+            this.game.sounds.playSound('./assets/sounds/button-click.mp3', false, 0.2);
         };
 
         /** zomm in */
@@ -87,7 +87,7 @@ export default class UI {
             this.questContainer.classList.remove('hide');
 
             /**play button sound */
-            this.game.sounds.playSound('../assets/sounds/button-click.mp3', false, 0.2);
+            this.game.sounds.playSound('./assets/sounds/button-click.mp3', false, 0.2);
         };
     };
 
@@ -96,7 +96,7 @@ export default class UI {
         this.tutorialContainer.classList.add('hide');
 
         /**play button click sound */
-        this.game.sounds.playSound('../assets/sounds/button-click.mp3', false, 0.2);
+        this.game.sounds.playSound('./assets/sounds/button-click.mp3', false, 0.2);
 
         /**unfreeze character */
         this.game.world.level.character.freeze = false;
@@ -115,7 +115,7 @@ export default class UI {
             /**unmute sounds and update local storage*/
             this.game.sounds.soundsMuted = false;
             this.soundButton.style.background = 'rgb(54, 162, 250)';
-            this.game.sounds.playSound('../assets/sounds/button-click.mp3', false, 0.2);
+            this.game.sounds.playSound('./assets/sounds/button-click.mp3', false, 0.2);
             localStorage.setItem('soundsMuted', false);
         } else {
             /**mute sounds and update local storage */
@@ -148,7 +148,7 @@ export default class UI {
             localStorage.setItem('musicMuted', true);
         };
         /**play button click sound */
-        this.game.sounds.playSound('../assets/sounds/button-click.mp3', false, 0.2);
+        this.game.sounds.playSound('./assets/sounds/button-click.mp3', false, 0.2);
     };
 
     /**Win Screen */
@@ -180,7 +180,7 @@ export default class UI {
             this.game.restart();
 
             /**play button click sound */
-            this.game.sounds.playSound('../assets/sounds/button-click.mp3', false, 0.2);
+            this.game.sounds.playSound('./assets/sounds/button-click.mp3', false, 0.2);
         });
     };
 

@@ -1,8 +1,8 @@
 import Game from "../game.class.js";
 
 export default class Sounds {
-  mainMusic = new Audio("../assets/sounds/game-music.mp3");
-  bossMusic = new Audio("../assets/sounds/boss-music.mp3");
+  mainMusic = new Audio("./assets/sounds/game-music.mp3");
+  bossMusic = new Audio("./assets/sounds/boss-music.mp3");
 
   constructor() {
     this.game = new Game();

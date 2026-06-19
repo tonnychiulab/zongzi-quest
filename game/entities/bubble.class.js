@@ -103,7 +103,7 @@ export default class Pufferfish extends MovableObject {
             };
             /**electric jellyfish pop sound */
             if(object.name == 'jellyfish' && object.type == 'electric') {
-                this.game.sounds.playSound('../assets/sounds/short-electric-shock.mp3');
+                this.game.sounds.playSound('./assets/sounds/short-electric-shock.mp3');
             };
         };
     };
@@ -113,6 +113,6 @@ export default class Pufferfish extends MovableObject {
         this.game.world.bubbles.splice(this.game.world.bubbles.indexOf(this), 1);
         clearInterval(this.collisionInterval);
         clearTimeout(this.selfDestructionTimeout);
-        this.game.sounds.playSound('../assets/sounds/bubble-pop.wav');
+        this.game.sounds.playSound('./assets/sounds/bubble-pop.wav');
     };
 };

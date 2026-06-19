@@ -43,9 +43,9 @@ export default class Pufferfish extends MovableObject {
         this.x = x;
         /**set type and load type images */
         this.type = type;
-        this.SWIM_ANIMATION.path = '../assets/jellyfish/' + this.type + '/' + this.color + '-';
+        this.SWIM_ANIMATION.path = './assets/jellyfish/' + this.type + '/' + this.color + '-';
         if (this.type == 'regular') {
-            this.DEATH_ANIMATION.path = '../assets/jellyfish/' + this.type + '-dead/' + this.color + '-';
+            this.DEATH_ANIMATION.path = './assets/jellyfish/' + this.type + '-dead/' + this.color + '-';
         };
 
         this.load();
@@ -55,7 +55,7 @@ export default class Pufferfish extends MovableObject {
 
     /**load assets */
     load() {
-        this.loadImage('../assets/jellyfish/' + this.type + '/' + this.color + '-0.png');
+        this.loadImage('./assets/jellyfish/' + this.type + '/' + this.color + '-0.png');
         this.loadAnimation(this.SWIM_ANIMATION);
 
         if (this.type == 'regular') {

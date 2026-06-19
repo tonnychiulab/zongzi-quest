@@ -34,11 +34,11 @@ export default class Condiment extends Object {
 
         this.animation = {
             frames: 8,
-            path: `../assets/items/${type}-animated/`,
+            path: `./assets/items/${type}-animated/`,
             loop: true,
         };
 
-        this.loadImage(`../assets/items/${type}-animated/0.png`);
+        this.loadImage(`./assets/items/${type}-animated/0.png`);
         this.loadAnimation(this.animation);
         this.playAnimation(this.animation);
     }
@@ -67,9 +67,9 @@ export default class Condiment extends Object {
     _playSound() {
         const allCollected = this.game.ui.collectedCondiments === this.game.ui.totalCondiments;
         if (allCollected) {
-            this.game.sounds.playSound('../assets/sounds/all-poison-collected.mp3', false, 0.4);
+            this.game.sounds.playSound('./assets/sounds/all-poison-collected.mp3', false, 0.4);
         } else {
-            this.game.sounds.playSound('../assets/sounds/poison-collected.wav');
+            this.game.sounds.playSound('./assets/sounds/poison-collected.wav');
         }
     }
 

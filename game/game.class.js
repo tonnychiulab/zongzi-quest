@@ -32,7 +32,7 @@ export default class Game {
     this.world.level.character.freeze = true;
 
     /**play win sound */
-    this.sounds.playSound("../assets/sounds/win.mp3", false, 0.4, 2000);
+    this.sounds.playSound("./assets/sounds/win.mp3", false, 0.4, 2000);
 
     /**show win container */
     this.ui.showWinContainer();
@@ -55,7 +55,7 @@ export default class Game {
     this.ui.showDeadContainer();
 
     /**play dead sound and fade out music */
-    this.sounds.playSound("../assets/sounds/dead-sound.mp3", false, 0.4);
+    this.sounds.playSound("./assets/sounds/dead-sound.mp3", false, 0.4);
     this.sounds.fadeOutAllMusic();
   }
 
@@ -98,20 +98,20 @@ export default class Game {
   loadAssets() {
     /**load bubbles */
     this.bubble = new Image();
-    this.bubble.src = "../assets/sharkie/attack/bubble-tap/bubble.png";
+    this.bubble.src = "./assets/sharkie/attack/bubble-tap/bubble.png";
 
     this.poisonBubble = new Image();
     this.poisonBubble.src =
-      "../assets/sharkie/attack/bubble-tap/poison-bubble.png";
+      "./assets/sharkie/attack/bubble-tap/poison-bubble.png";
 
     /**load barriers */
     this.barrier0 = new Image();
     this.barrier1 = new Image();
     this.barrier2 = new Image();
     this.barrier3 = new Image();
-    this.barrier0.src = "../assets/barriers/0.png";
-    this.barrier1.src = "../assets/barriers/1.png";
-    this.barrier2.src = "../assets/barriers/2.png";
-    this.barrier3.src = "../assets/barriers/3.png";
+    this.barrier0.src = "./assets/barriers/0.png";
+    this.barrier1.src = "./assets/barriers/1.png";
+    this.barrier2.src = "./assets/barriers/2.png";
+    this.barrier3.src = "./assets/barriers/3.png";
   }
 }

@@ -29,11 +29,11 @@ export default class Zongzi extends Object {
 
         this.animation = {
             frames: type === 'alkaline' ? 8 : 4,
-            path: `../assets/items/${type}-zongzi/`,
+            path: `./assets/items/${type}-zongzi/`,
             loop: true,
         };
 
-        this.loadImage(`../assets/items/${type}-zongzi/0.png`);
+        this.loadImage(`./assets/items/${type}-zongzi/0.png`);
         this.loadAnimation(this.animation);
         this.playAnimation(this.animation);
     }
@@ -47,7 +47,7 @@ export default class Zongzi extends Object {
 
         this._applyEffect();
         this.remove();
-        this.game.sounds.playSound('../assets/sounds/coin-collected.mp3', false, 0.3);
+        this.game.sounds.playSound('./assets/sounds/coin-collected.mp3', false, 0.3);
     }
 
     _applyEffect() {

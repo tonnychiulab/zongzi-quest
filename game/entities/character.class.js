@@ -45,49 +45,49 @@ export default class Character extends MovableObject {
   /**animations */
   SWIM_ANIMATION = {
     frames: 5,
-    path: "../assets/sharkie/swim/",
+    path: "./assets/sharkie/swim/",
     loop: true,
   };
 
   IDLE_ANIMATION = {
     frames: 18,
-    path: "../assets/sharkie/idle/",
+    path: "./assets/sharkie/idle/",
     loop: true,
   };
 
   SLAP_ANIMATION = {
     frames: 3,
-    path: "../assets/sharkie/attack/fin-slap/",
+    path: "./assets/sharkie/attack/fin-slap/",
     loop: false,
   };
 
   BUBBLE_ANIMATION = {
     frames: 4,
-    path: "../assets/sharkie/attack/bubble-tap/",
+    path: "./assets/sharkie/attack/bubble-tap/",
     loop: false,
   };
 
   NORMAL_HURT_ANIMATION = {
     frames: 1,
-    path: "../assets/sharkie/hurt/",
+    path: "./assets/sharkie/hurt/",
     loop: false,
   };
 
   ELECTRIC_HURT_ANIMATION = {
     frames: 2,
-    path: "../assets/sharkie/hurt/electric/",
+    path: "./assets/sharkie/hurt/electric/",
     loop: false,
   };
 
   POISON_HURT_ANIMATION = {
     frames: 5,
-    path: "../assets/sharkie/hurt/poison/",
+    path: "./assets/sharkie/hurt/poison/",
     loop: false,
   };
 
   DEATH_ANIMATION = {
     frames: 8,
-    path: "../assets/sharkie/dead/",
+    path: "./assets/sharkie/dead/",
     loop: false,
   };
 
@@ -113,7 +113,7 @@ export default class Character extends MovableObject {
 
   /**load assets */
   load() {
-    this.loadImage("../assets/sharkie/swim/1.png");
+    this.loadImage("./assets/sharkie/swim/1.png");
     this.loadAnimation(this.SWIM_ANIMATION);
     this.loadAnimation(this.IDLE_ANIMATION);
     this.loadAnimation(this.SLAP_ANIMATION);
@@ -192,13 +192,13 @@ export default class Character extends MovableObject {
   playDmgAnimation(type) {
     if (type == "electric") {
       this.playAnimation(this.ELECTRIC_HURT_ANIMATION);
-      this.game.sounds.playSound("../assets/sounds/electro-shock.mp3");
+      this.game.sounds.playSound("./assets/sounds/electro-shock.mp3");
     } else if (type == "poison") {
       this.playAnimation(this.POISON_HURT_ANIMATION);
-      this.game.sounds.playSound("../assets/sounds/small-hit.wav");
+      this.game.sounds.playSound("./assets/sounds/small-hit.wav");
     } else {
       this.playAnimation(this.NORMAL_HURT_ANIMATION);
-      this.game.sounds.playSound("../assets/sounds/small-hit.wav");
+      this.game.sounds.playSound("./assets/sounds/small-hit.wav");
     }
   }
 
@@ -278,7 +278,7 @@ export default class Character extends MovableObject {
 
   /**jump character and play sound */
   jump() {
-    this.game.sounds.playSound("../assets/sounds/jump.wav", false, 0.4);
+    this.game.sounds.playSound("./assets/sounds/jump.wav", false, 0.4);
     this.speedY = 15;
   }
 
@@ -298,9 +298,9 @@ export default class Character extends MovableObject {
     this.jump();
 
     /**play sound and stick to last image of death animation */
-    this.game.sounds.playSound("../assets/sounds/small-hit.wav");
+    this.game.sounds.playSound("./assets/sounds/small-hit.wav");
     setTimeout(() => {
-      this.loadImage("../assets/sharkie/dead/7.png");
+      this.loadImage("./assets/sharkie/dead/7.png");
     }, 1050);
 
     /**lose game */
@@ -315,7 +315,7 @@ export default class Character extends MovableObject {
 
       this.isHitting = true;
 
-      this.game.sounds.playSound("../assets/sounds/slap.mp3", false, 0.4, 200);
+      this.game.sounds.playSound("./assets/sounds/slap.mp3", false, 0.4, 200);
 
       /**continue swim or idle animation after */
       setTimeout(() => {
@@ -334,7 +334,7 @@ export default class Character extends MovableObject {
       /**animation and sound */
       this.playAnimation(this.BUBBLE_ANIMATION);
       this.game.sounds.playSound(
-        "../assets/sounds/bubble-creation.wav",
+        "./assets/sounds/bubble-creation.wav",
         false,
         0.2,
         500
